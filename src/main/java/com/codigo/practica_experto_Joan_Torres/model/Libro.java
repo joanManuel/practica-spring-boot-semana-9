@@ -12,7 +12,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
+//@AllArgsConstructor
 public class Libro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,4 +27,10 @@ public class Libro {
     )
     private Set<Autor> autor = new HashSet<>();
 
+    public Libro(){}
+    public Libro(Long id, String titulo, Set<Autor> autor) {
+        this.id = id;
+        this.titulo = titulo;
+        this.autor = autor;
+    }
 }
